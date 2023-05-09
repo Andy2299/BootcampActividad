@@ -20,7 +20,7 @@ async function seedCountries() {
         capital: country.capital[0],
         region: country.region,
         population: country.population,
-        // Agregue o modifique los campos según su esquema
+       
       });
 
       try {

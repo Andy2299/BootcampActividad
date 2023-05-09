@@ -18,8 +18,6 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('Connected to MongoDB');
 
-  // Poblar la base de datos con datos de países (opcional)
-  // seedCountries();
 
   // Iniciar la aplicación
   app.listen(PORT, () => {

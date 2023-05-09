@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    image: my_api
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URI: 'mongodb+srv://Andrey:Bbov2mDoX65xH3Jr@cluster0.spx7etj.mongodb.net/'
+      PORT: 3000
+    networks:
+      - my_network
+
+  mongo:
+    image: mongo:latest
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - my_network
+
+networks:
+  my_network:
+
+volumes:
+  mongo_data:
